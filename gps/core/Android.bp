@@ -27,6 +27,7 @@ cc_library_shared {
     ],
 
     cflags: [
+        "-Wno-unused-parameter",
         "-fno-short-enums",
         "-D_ANDROID_",
     ] + GNSS_CFLAGS,
