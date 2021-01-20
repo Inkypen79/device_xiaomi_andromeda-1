@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Copyright (c) 2016-2019, The Linux Foundation. All rights reserved.    -->
+<!-- Copyright (c) 2016-2020, The Linux Foundation. All rights reserved.    -->
 <!--                                                                        -->
 <!-- Redistribution and use in source and binary forms, with or without     -->
 <!-- modification, are permitted provided that the following conditions are -->
@@ -75,6 +75,7 @@
     <ctl name="MultiMedia8 Mixer SLIM_4_TX" value="0" />
     <ctl name="MultiMedia8 Mixer SLIM_7_TX" value="0" />
     <ctl name="MultiMedia10 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia10 Mixer SLIM_1_TX" value="0" />
     <ctl name="MultiMedia10 Mixer SLIM_7_TX" value="0" />
     <ctl name="MultiMedia10 Mixer AFE_PCM_TX" value="0" />
     <ctl name="MultiMedia17 Mixer SLIM_0_TX" value="0" />
@@ -264,6 +265,9 @@
     <ctl name="VoiceMMode1_Tx Mixer USB_AUDIO_TX_MMode1" value="0" />
     <!-- Multimode Voice1 Display-Port -->
     <ctl name="DISPLAY_PORT_RX_Voice Mixer VoiceMMode1" value="0" />
+    <!-- Multimode Voice1 proxy-Port -->
+    <ctl name="PROXY_RX_Voice Mixer VoiceMMode1" value="0" />
+    <ctl name="VoiceMMode1_Tx Mixer PROXY_TX_MMode1" value="0" />
     <!-- Miltimode Voice1 end-->
 
     <!-- Multimode Voice2 -->
@@ -281,6 +285,9 @@
     <ctl name="VoiceMMode2_Tx Mixer USB_AUDIO_TX_MMode2" value="0" />
     <!-- Multimode Voice2 Display-Port -->
     <ctl name="DISPLAY_PORT_RX_Voice Mixer VoiceMMode2" value="0" />
+    <!-- Multimode Voice2 proxy-Port -->
+    <ctl name="PROXY_RX_Voice Mixer VoiceMMode2" value="0" />
+    <ctl name="VoiceMMode2_Tx Mixer PROXY_TX_MMode2" value="0" />
     <!-- Multimode Voice2 end-->
 
     <!-- Voice external ec. reference -->
@@ -376,19 +383,19 @@
     <ctl name="RX5 Digital Volume" value="84" />
     <ctl name="RX6 Digital Volume" value="84" />
     <ctl name="RX7 Digital Volume" value="84" />
-    <ctl name="ADC1 Volume" value="12" />
-    <ctl name="ADC2 Volume" value="12" />
+    <ctl name="ADC1 Volume" value="8" />
+    <ctl name="ADC2 Volume" value="8" />
     <ctl name="ADC3 Volume" value="8" />
     <ctl name="ADC4 Volume" value="8" />
-    <ctl name="DEC0 Volume" value="100" />
-    <ctl name="DEC1 Volume" value="100" />
-    <ctl name="DEC2 Volume" value="100" />
-    <ctl name="DEC3 Volume" value="100" />
-    <ctl name="DEC4 Volume" value="100" />
-    <ctl name="DEC5 Volume" value="100" />
-    <ctl name="DEC6 Volume" value="100" />
-    <ctl name="DEC7 Volume" value="100" />
-    <ctl name="DEC8 Volume" value="100" />
+    <ctl name="DEC0 Volume" value="84" />
+    <ctl name="DEC1 Volume" value="84" />
+    <ctl name="DEC2 Volume" value="84" />
+    <ctl name="DEC3 Volume" value="84" />
+    <ctl name="DEC4 Volume" value="84" />
+    <ctl name="DEC5 Volume" value="84" />
+    <ctl name="DEC6 Volume" value="84" />
+    <ctl name="DEC7 Volume" value="84" />
+    <ctl name="DEC8 Volume" value="84" />
 
     <!-- Compander controls -->
     <ctl name="COMP1 Switch" value="1" />
@@ -628,6 +635,44 @@
     <path name="compress-offload-playback9 speaker">
         <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
+
+    <!-- Add for j20s begin -->
+    <path name="deep-buffer-playback handset">
+    </path>
+
+    <path name="low-latency-playback handset">
+    </path>
+
+    <path name="audio-ull-playback handset">
+    </path>
+
+    <path name="compress-offload-playback handset">
+    </path>
+
+    <path name="compress-offload-playback2 handset">
+    </path>
+
+    <path name="compress-offload-playback3 handset">
+    </path>
+
+    <path name="compress-offload-playback4 handset">
+    </path>
+
+    <path name="compress-offload-playback5 handset">
+    </path>
+
+    <path name="compress-offload-playback6 handset">
+    </path>
+
+    <path name="compress-offload-playback7 handset">
+    </path>
+
+    <path name="compress-offload-playback8 handset">
+    </path>
+
+    <path name="compress-offload-playback9 handset">
+    </path>
+    <!-- Add for j20s end -->
 
     <path name="compress-voip-call speaker">
         <ctl name="VOIP_EXT_EC MUX" value="QUAT_MI2S_TX" />
@@ -1038,6 +1083,9 @@
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
     </path>
 
+    <path name="echo-reference handset">
+    </path>
+
     <path name="echo-reference headphones">
         <ctl name="EC Reference Channels" value="One"/>
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_6_RX" />
@@ -1052,6 +1100,9 @@
     </path>
 
     <path name="echo-reference headphones-44.1">
+    </path>
+
+    <path name="echo-reference-voip">
     </path>
 
     <path name="echo-reference-voip earpiece">
@@ -1077,8 +1128,7 @@
         <ctl name="AUDIO_REF_EC_UL10 MUX" value="DISPLAY_PORT" />
     </path>
 
-    <path name="echo-reference display-port">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="DISPLAY_PORT" />
+    <path name="echo-reference-voip handset">
     </path>
 
     <path name="echo-reference-voip speaker">
@@ -1099,6 +1149,9 @@
     <path name="echo-reference bt-sco-headset">
         <ctl name="EC Reference Channels" value="One"/>
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_7_RX" />
+    </path>
+
+    <path name="echo-reference-voip headphones-44.1">
     </path>
 
     <path name="echo-reference-voip usb-headphones">
@@ -2216,6 +2269,10 @@
         <path name="incall-rec-uplink-compress" />
     </path>
 
+    <path name="incall-rec-uplink call-proxy-in">
+        <path name="incall-rec-uplink" />
+    </path>
+
     <path name="incall-rec-downlink">
         <ctl name="MultiMedia1 Mixer VOC_REC_DL"  value="1" />
     </path>
@@ -2262,6 +2319,10 @@
 
     <path name="incall-rec-downlink-compress afe-proxy">
         <path name="incall-rec-downlink-compress" />
+    </path>
+
+    <path name="incall-rec-downlink call-proxy-in">
+        <path name="incall-rec-downlink" />
     </path>
 
     <path name="incall-rec-uplink-and-downlink">
@@ -2312,6 +2373,10 @@
 
     <path name="incall-rec-uplink-and-downlink-compress afe-proxy">
         <path name="incall-rec-uplink-and-downlink-compress" />
+    </path>
+
+    <path name="incall-rec-uplink-and-downlink call-proxy-in">
+        <path name="incall-rec-uplink-and-downlink" />
     </path>
 
     <path name="hfp-sco">
@@ -2429,6 +2494,11 @@
         <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
     </path>
 
+    <path name="voicemmode1-call call-proxy">
+        <ctl name="PROXY_RX_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="VoiceMMode1_Tx Mixer PROXY_TX_MMode1" value="1" />
+    </path>
+
     <path name="voicemmode2-call">
         <ctl name="SLIM_0_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
@@ -2478,9 +2548,17 @@
         <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
     </path>
 
+    <path name="voicemmode2-call call-proxy">
+        <ctl name="PROXY_RX_Voice Mixer VoiceMMode2" value="1" />
+        <ctl name="VoiceMMode2_Tx Mixer PROXY_TX_MMode2" value="1" />
+    </path>
+
     <!-- VoIP Rx settings -->
     <path name="audio-playback-voip">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip handset">
     </path>
 
     <path name="audio-playback-voip headphones">
@@ -2647,6 +2725,12 @@
         <ctl name="SpkrRight BOOST Switch" value="1" />
         <ctl name="SpkrRight VISENSE Switch" value="1" />
         <ctl name="SpkrRight SWR DAC_Port Switch" value="1" />
+    </path>
+
+    <path name="speaker-left">
+    </path>
+
+     <path name="speaker-right">
     </path>
 
     <path name="speaker-mono">
@@ -2894,6 +2978,15 @@
         <ctl name="RX INT2_1 NATIVE MUX" value="ON" />
     </path>
 
+    <path name="headphones-ce">
+    </path>
+
+    <path name="headphones-44.1-ce">
+    </path>
+
+    <path name="headphones-ce-fm">
+    </path>
+
     <path name="asrc-mode">
         <ctl name="ASRC0 Output Mode" value="FRAC" />
         <ctl name="ASRC1 Output Mode" value="FRAC" />
@@ -2940,7 +3033,7 @@
         <path name="amic2" />
         <ctl name="External AMIC2 Mux" value="default" />
         <ctl name="ADC2 Volume" value="5" />
-        <ctl name="DEC1 Volume" value="95" />
+        <ctl name="DEC1 Volume" value="84" />
     </path>
 
     <path name="headset-mic-liquid">
@@ -3021,12 +3114,7 @@
 
     <path name="voice-headset-mic-qrd">
         <path name="amic2" />
-        <ctl name="DEC0 Volume" value="95" />
-    </path>
-
-    <path name="voice-headset-mic-qrd">
-        <path name="amic2" />
-        <ctl name="DEC0 Volume" value="95" />
+        <ctl name="DEC0 Volume" value="84" />
     </path>
 
     <path name="speaker-and-headphones">
@@ -3036,6 +3124,9 @@
         <ctl name="COMP2 Switch" value="0" />
         <ctl name="HPHL Volume" value="15" />
         <ctl name="HPHR Volume" value="15" />
+    </path>
+
+    <path name="speaker-and-headphones-ce">
     </path>
 
     <path name="speaker-safe-and-headphones">
@@ -3776,6 +3867,9 @@
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
+    <path name="mmap-playback handset">
+    </path>
+
     <path name="mmap-playback speaker">
         <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
@@ -3994,6 +4088,10 @@
         <path name="incall_music_uplink" />
     </path>
 
+    <path name="incall_music_uplink call-proxy">
+        <path name="incall_music_uplink" />
+    </path>
+
     <path name="incall_music_uplink2">
         <ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="1" />
     </path>
@@ -4068,5 +4166,11 @@
 
     <path name="incall_music_uplink2 afe-proxy">
         <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="call-proxy">
+    </path>
+
+    <path name="call-proxy-in">
     </path>
 </mixer>
