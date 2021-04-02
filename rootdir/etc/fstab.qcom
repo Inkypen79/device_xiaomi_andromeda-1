@@ -11,10 +11,10 @@
 /dev/block/bootdevice/by-name/boot           /boot                   emmc    defaults                                                                                          recoveryonly
 /dev/block/bootdevice/by-name/cache          /cache                  ext4    nosuid,noatime,nodev,barrier=0                                                                    wait
 /dev/block/bootdevice/by-name/cache          /cache                  f2fs    nosuid,nodev,noatime,inline_xattr                                                                 wait,check,formattable
-/dev/block/bootdevice/by-name/userdata       /data                   ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc                                                    latemount,wait,check,fileencryption=ice,wrappedkey,quota,reservedsize=128M
-/dev/block/bootdevice/by-name/userdata       /data                   f2fs    noatime,nosuid,nodev,discard,background_gc=sync,fsync_mode=nobarrier                              latemount,wait,check,fileencryption=ice,wrappedkey,quota,reservedsize=128M,formattable
+/dev/block/bootdevice/by-name/userdata       /data                   ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,inlinecrypt                                        latemount,wait,check,fileencryption=ice,wrappedkey,quota,reservedsize=128M
+/dev/block/bootdevice/by-name/userdata       /data                   f2fs    noatime,nosuid,nodev,discard,background_gc=sync,fsync_mode=nobarrier,inlinecrypt                  latemount,wait,check,fileencryption=ice,wrappedkey,quota,reservedsize=128M,formattable
 /dev/block/bootdevice/by-name/misc           /misc                   emmc    defaults                                                                                          defaults
-/dev/block/bootdevice/by-name/persist        /mnt/vendor/persist     ext4    noatime,nosuid,nodev,barrier=1                                                                    wait
+/dev/block/bootdevice/by-name/persist        /mnt/vendor/persist     ext4    noatime,nosuid,nodev,barrier=1                                                                    wait,check
 /dev/block/bootdevice/by-name/recovery       /recovery               emmc    defaults                                                                                          recoveryonly
 /dev/block/bootdevice/by-name/vendor         /vendor                 ext4    ro,barrier=1                                                                                      wait,recoveryonly
 /dev/block/bootdevice/by-name/bluetooth      /vendor/bt_firmware     vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0   wait
