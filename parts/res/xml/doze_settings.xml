@@ -56,5 +56,17 @@
             android:icon="@drawable/ic_pocket" />
 
     </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="pocket_sensor"
+        android:title="@string/pocket_sensor_title">
+
+        <SwitchPreference
+            android:key="gesture_pocket"
+            android:defaultValue="false"
+            android:icon="@drawable/ic_doze_pocket"
+            android:title="@string/pocketmode_gesture_title"
+            android:summary="@string/pocketmode_gesture_summary" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

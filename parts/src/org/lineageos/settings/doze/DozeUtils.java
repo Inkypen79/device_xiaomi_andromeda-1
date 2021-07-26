@@ -33,6 +33,12 @@ import static android.provider.Settings.Secure.DOZE_ENABLED;
 
 public final class DozeUtils {
 
+    protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
+    protected static final String CATEG_PICKUP_SENSOR = "pickup_sensor";
+    protected static final String CATEG_POCKET_SENSOR = "pocket_sensor";
+    protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
+    protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
+    
     private static final String TAG = "DozeUtils";
     private static final boolean DEBUG = false;
 
@@ -60,9 +66,9 @@ public final class DozeUtils {
     }
 
     public static void checkDozeService(Context context) {
-        if (isDozeEnabled(context) && !isAlwaysOnEnabled(context) && sensorsEnabled(context)) {
+        if (isDozeEnabled(context) &&  sensorsEnabled(context)) {
             startService(context);
-        } else {
+        }else{
             stopService(context);
         }
     }
@@ -128,10 +134,14 @@ public final class DozeUtils {
     protected static boolean isPocketGestureEnabled(Context context) {
         return isGestureEnabled(context, GESTURE_POCKET_KEY);
     }
+    
+        
+    protected static boolean isPocketGestureEnabled(Context context) {
+        return isGestureEnabled(context, GESTURE_POCKET_KEY);
+    }
 
     public static boolean sensorsEnabled(Context context) {
-        return isPickUpEnabled(context) || isHandwaveGestureEnabled(context)
-                || isPocketGestureEnabled(context);
+        return isPickUpEnabled(context) || isPocketGestureEnabled(context);    
     }
 
     protected static Sensor getSensor(SensorManager sm, String type) {
