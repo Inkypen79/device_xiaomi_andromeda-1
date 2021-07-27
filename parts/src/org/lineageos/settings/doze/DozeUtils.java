@@ -17,19 +17,20 @@
 
 package org.lineageos.settings.doze;
 
+import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
+import static android.provider.Settings.Secure.DOZE_ENABLED;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.hardware.display.AmbientDisplayConfiguration;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.hardware.display.AmbientDisplayConfiguration;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
-import androidx.preference.PreferenceManager;
 
-import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
-import static android.provider.Settings.Secure.DOZE_ENABLED;
+import androidx.preference.PreferenceManager;
 
 public final class DozeUtils {
 
@@ -41,17 +42,7 @@ public final class DozeUtils {
     
     private static final String TAG = "DozeUtils";
     private static final boolean DEBUG = false;
-
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
-
-    protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
-
-    protected static final String CATEG_PICKUP_SENSOR = "pickup_sensor";
-    protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
-
-    protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
-    protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
-    protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
     public static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
@@ -70,17 +61,6 @@ public final class DozeUtils {
             startService(context);
         }else{
             stopService(context);
-        }
-    }
-
-    protected static boolean getProxCheckBeforePulse(Context context) {
-        try {
-            Context con = context.createPackageContext("com.android.systemui", 0);
-            int id = con.getResources().getIdentifier("doze_proximity_check_before_pulse",
-                    "bool", "com.android.systemui");
-            return con.getResources().getBoolean(id);
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
         }
     }
 
@@ -127,14 +107,6 @@ public final class DozeUtils {
         return isGestureEnabled(context, GESTURE_PICK_UP_KEY);
     }
 
-    protected static boolean isHandwaveGestureEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_HAND_WAVE_KEY);
-    }
-
-    protected static boolean isPocketGestureEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_POCKET_KEY);
-    }
-    
         
     protected static boolean isPocketGestureEnabled(Context context) {
         return isGestureEnabled(context, GESTURE_POCKET_KEY);

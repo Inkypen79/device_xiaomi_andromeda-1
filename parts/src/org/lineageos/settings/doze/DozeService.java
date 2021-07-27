@@ -98,10 +98,6 @@ public class DozeService extends Service {
         if (DozeUtils.isPocketGestureEnabled(this)) {
             mPocketSensor.enable();
         }
-        if (DozeUtils.isHandwaveGestureEnabled(this) ||
-                DozeUtils.isPocketGestureEnabled(this)) {
-            mProximitySensor.disable();
-        }
     }
 
     private void onDisplayOff() {
@@ -112,20 +108,5 @@ public class DozeService extends Service {
         if (DozeUtils.isPocketGestureEnabled(this)) {
             mPocketSensor.disable();
         }
-        if (DozeUtils.isHandwaveGestureEnabled(this) ||
-                DozeUtils.isPocketGestureEnabled(this)) {
-            mProximitySensor.enable();
-        }
     }
-
-    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-                onDisplayOn();
-            } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-                onDisplayOff();
-            }
-        }
-    };
 }

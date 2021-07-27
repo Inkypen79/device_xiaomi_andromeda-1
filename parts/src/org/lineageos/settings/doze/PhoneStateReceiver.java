@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.lineageos.settings.d.doze;
+package org.lineageos.settings.doze;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

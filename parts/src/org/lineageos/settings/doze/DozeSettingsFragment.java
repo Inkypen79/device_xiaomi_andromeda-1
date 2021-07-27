@@ -34,6 +34,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
@@ -87,25 +88,11 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mPocketPreference.setEnabled(dozeEnabled);
         mPocketPreference.setOnPreferenceChangeListener(this);
 
-        mHandwavePreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_HAND_WAVE_KEY);
-        mHandwavePreference.setEnabled(dozeEnabled);
-        mHandwavePreference.setOnPreferenceChangeListener(this);
-
-        mPocketPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_POCKET_KEY);
-        mPocketPreference.setEnabled(dozeEnabled);
-        mPocketPreference.setOnPreferenceChangeListener(this);
-
-        // Hide proximity sensor related features if the device doesn't support them
-        if (!DozeUtils.getProxCheckBeforePulse(getActivity())) {
-            getPreferenceScreen().removePreference(proximitySensorCategory);
-        }
-
         // Hide AOD if not supported and set all its dependents otherwise
         if (!DozeUtils.alwaysOnDisplayAvailable(getActivity())) {
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
         } else {
             pickupSensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
         }
     }
 
@@ -177,6 +164,11 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         return false;
     }
 
+    private void showHelp() {
+        HelpDialogFragment fragment = new HelpDialogFragment();
+        fragment.show(getFragmentManager(), "help_dialog");
+    }
+    
     private static class HelpDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -194,10 +186,5 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
                     .putBoolean("first_help_shown", true)
                     .commit();
         }
-    }
-
-    private void showHelp() {
-        HelpDialogFragment fragment = new HelpDialogFragment();
-        fragment.show(getFragmentManager(), "help_dialog");
     }
 }
