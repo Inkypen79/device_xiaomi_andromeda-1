@@ -83,4 +83,11 @@
     <string name="slider_sound_lingdong">Intellect</string>
     <string name="slider_sound_zippo">Lighter</string>
     <string name="slider_sound_none">None</string>
+    
+    <!--Pocket-->
+    <string name="pocket_sensor_title">Emulated Pocket Sensor</string>
+    <string name="pocketmode_gesture_title">Pocket Protection</string>
+    <string name="pocketmode_gesture_summary">Combine proximity, light and pickup sensors to emulate a pocket mode protection, at wake up if device will be in the pocket or in similiar context will be locked with a delay of 3s.</string>    
+
+
 </resources>

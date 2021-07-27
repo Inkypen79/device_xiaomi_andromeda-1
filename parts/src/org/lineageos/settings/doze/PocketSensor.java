@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.d.doze;
+package org.lineageos.settings.doze;
 
 import android.app.AlarmManager;
 import android.app.KeyguardManager;
@@ -115,7 +115,7 @@ public class PocketSensor implements SensorEventListener {
             if (DEBUG) Log.d(TAG, "Disabling");
             mPickedUp=false;
            //save alarm after turn off screen
-            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            AlarmManager alarmManager = (AlarmManager) mContext.getSystemService(mContext.ALARM_SERVICE);
             AlarmManager.AlarmClockInfo alarmClockInfo = alarmManager.getNextAlarmClock();
             if (alarmClockInfo != null) nextAlarm = alarmClockInfo.getTriggerTime();
             else nextAlarm = -1;
