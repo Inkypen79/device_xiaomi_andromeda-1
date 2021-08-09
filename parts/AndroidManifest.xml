@@ -24,6 +24,8 @@
     <uses-permission android:name="android.permission.INJECT_EVENTS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permissions.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
@@ -59,6 +61,21 @@
                  android:permission="XiaomiDozeService">
         </service>
 
+        <receiver android:name=".doze.DozeService">
+        <intent-filter> 
+            <action android:name="android.intent.action.SCREEN_ON" />
+            <action android:name="android.intent.action.SCREEN_OFF" />
+            <action android:name="android.Intent.ACTION_USER_PRESENT" />
+        </intent-filter> 
+        </receiver>
+
+        <receiver android:name=".doze.PhoneStateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        
         <service
             android:name=".display.DcDimmingTileService"
             android:icon="@drawable/ic_dc_tile"
