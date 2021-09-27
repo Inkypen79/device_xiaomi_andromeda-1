@@ -158,6 +158,7 @@ sys.haptic.down.strong=5
 sys.haptic.down.weak=0
 sys.haptic.motor=zlinear
 sys.haptic.runin=13
+sys.usb.mtp.batchcancel=1
 sys.vendor.shutdown.waittime=500
 vendor.audio.adm.buffering.ms=6
 vendor.audio.dolby.ds2.enabled=false
