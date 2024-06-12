@@ -32,6 +32,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     CarrierConfigResAndromeda \
+    DeviceAsWebcamResAndromeda \
     FrameworksResAndromeda \
     SettingsProviderResAndromeda \
     SystemUIResAndromeda \
