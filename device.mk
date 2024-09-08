@@ -133,11 +133,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libsuspend
 
-# Codec2
-PRODUCT_PACKAGES += \
-    libcodec2_vndk.vendor \
-    libcodec2_hidl@1.0.vendor
-
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
@@ -271,17 +266,9 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
-    libstagefrighthw
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_vndk.vendor \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 # Net
 PRODUCT_PACKAGES += \
