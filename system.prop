@@ -319,3 +319,7 @@ ro.sf.blurs_are_expensive=1
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
+
+# Fingerprint
+persist.vendor.fingerprint.type=rear
+persist.vendor.fingerprint.sensor_modules=fpc
