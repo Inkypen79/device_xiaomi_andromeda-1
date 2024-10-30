@@ -198,5 +198,5 @@ vendor.display.enable_optimize_refresh=1
 vendor.gatekeeper.disable_spu=true
 vendor.power.pasr.enabled=true
 vendor.qcom.bluetooth.soc=cherokee
-vendor.usb.use_ffs_mtp=0
+vendor.usb.use_ffs_mtp=1
 vendor.voice.path.for.pcm.voip=false
