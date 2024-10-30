@@ -90,6 +90,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
+TARGET_USES_YCRCB_CAMERA_ENCODE := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
