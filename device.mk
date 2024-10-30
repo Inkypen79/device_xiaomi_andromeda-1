@@ -13,7 +13,8 @@ $(call inherit-product, vendor/xiaomi/andromeda/andromeda-vendor.mk)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    vendor/qcom/opensource/usb/etc
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -369,7 +370,6 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.batteryd.rc \
-    init.mi.usb.sh \
     capture.sh \
     capture_1adc.sh \
     init.class_main.sh \
