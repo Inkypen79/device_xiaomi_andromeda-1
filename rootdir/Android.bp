@@ -1,0 +1,179 @@
+//
+// Copyright (C) 2024 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+sh_binary {
+    name: "capture.sh",
+    src: "bin/capture.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "capture_1adc.sh",
+    src: "bin/capture_1adc.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.class_main.sh",
+    src: "bin/init.class_main.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.crda.sh",
+    src: "bin/init.crda.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.mdm.sh",
+    src: "bin/init.mdm.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.class_core.sh",
+    src: "bin/init.qcom.class_core.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.crashdata.sh",
+    src: "bin/init.qcom.crashdata.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.early_boot.sh",
+    src: "bin/init.qcom.early_boot.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.efs.sync.sh",
+    src: "bin/init.qcom.efs.sync.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.post_boot.sh",
+    src: "bin/init.qcom.post_boot.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.sdio.sh",
+    src: "bin/init.qcom.sdio.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.sensors.sh",
+    src: "bin/init.qcom.sensors.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.sh",
+    src: "bin/init.qcom.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qti.fm.sh",
+    src: "bin/init.qti.fm.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qti.ims.sh",
+    src: "bin/init.qti.ims.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "playback.sh",
+    src: "bin/playback.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "qca6234-service.sh",
+    src: "bin/qca6234-service.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "setup_headsetmic2headphone.sh",
+    src: "bin/setup_headsetmic2headphone.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "setup_mainmic2headphone.sh",
+    src: "bin/setup_mainmic2headphone.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "setup_topmic2headphone.sh",
+    src: "bin/setup_topmic2headphone.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "teardown_loopback.sh",
+    src: "bin/teardown_loopback.sh",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    soc_specific: true,
+    ramdisk_available: true,
+}
+
+prebuilt_etc {
+    name: "init.batteryd.rc",
+    src: "etc/init.batteryd.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.factory.rc",
+    src: "etc/init.qcom.factory.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.rc",
+    src: "etc/init.qcom.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.qcom.rc",
+    src: "etc/init.recovery.qcom.rc",
+    sub_dir: "init",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "etc/init.target.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.qcom.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.qcom.rc",
+    soc_specific: true,
+}
