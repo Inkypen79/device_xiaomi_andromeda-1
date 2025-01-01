@@ -167,8 +167,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 PRODUCT_PACKAGES += \
-    gralloc.msmnile \
-    hwcomposer.msmnile
+    gralloc.qcom \
+    hwcomposer.qcom
 
 PRODUCT_PACKAGES += \
     libtinyxml
