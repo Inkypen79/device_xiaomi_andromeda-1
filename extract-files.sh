@@ -57,6 +57,7 @@ function blob_fixup() {
     case "${1}" in
         vendor/etc/media_codecs.xml|vendor/etc/media_codecs_vendor.xml)
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|vendor_audio)/d" "${2}"
+            sed -i '/<Settings>/a\        \<Domain name="telephony" enabled="true" />' "${2}"
             ;;
         vendor/etc/seccomp_policy/atfwd@2.0.policy)
             [ "$2" = "" ] && return 0
