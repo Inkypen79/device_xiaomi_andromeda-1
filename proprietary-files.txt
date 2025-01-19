@@ -726,13 +726,10 @@ vendor/lib64/vendor.qti.hardware.factory@1.1.so
 vendor/bin/fidoca
 vendor/etc/init/vendor.xiaomi.hardware.mfidoca@1.0-service.rc
 vendor/lib/libmfido.so
-vendor/lib/vendor.xiaomi.hardware.mfidoca@1.0.so
 vendor/lib64/libmfido.so
-vendor/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
 
 # Fingerprint
 vendor/etc/permissions/com.fingerprints.extension.xml
-vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so
 
 # Firmware
@@ -1746,9 +1743,6 @@ vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
 vendor/lib/vendor.xiaomi.hardware.misys@1.0.so
 vendor/lib/vendor.xiaomi.hardware.misys@2.0.so
 vendor/lib/vendor.xiaomi.hardware.misys@3.0.so
-vendor/lib/vendor.xiaomi.hardware.mlipay@1.0.so
-vendor/lib/vendor.xiaomi.hardware.mlipay@1.1.so
-vendor/lib/vendor.xiaomi.hardware.mtdservice@1.0.so
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.0.so
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.1.so
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.2.so
@@ -1767,11 +1761,6 @@ vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
 vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
 vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.1.so
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.2.so

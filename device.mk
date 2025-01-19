@@ -192,6 +192,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.xiaomi \
+    com.fingerprints.extension@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
@@ -535,3 +536,9 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libqdMetaData \
     libqdMetaData.system
+
+# Xiaomi
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.mfidoca@1.0.vendor \
+    vendor.xiaomi.hardware.mlipay@1.1.vendor \
+    vendor.xiaomi.hardware.mtdservice@1.2.vendor
